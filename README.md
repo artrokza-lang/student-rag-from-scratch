@@ -7,12 +7,13 @@
 [![Gradio](https://img.shields.io/badge/Gradio-4.x-FF7C00?logo=gradio&logoColor=white)](https://www.gradio.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Educational-blue)](https://github.com/)
+[![Date](https://img.shields.io/badge/Date-16.03.2026-informational)](https://github.com/)
 
 An educational RAG (Retrieval-Augmented Generation) project that shows how a naive RAG pipeline works under the hood — without framework "magic". It ships with four pre-configured neuro-employee personas (HR support, recruiter, report generator, QA analyst), each backed by its own Google Docs knowledge base. Built with LangChain + ChromaDB + OpenAI + Gradio.
 
 > ⚠️ **This is an educational project.** It is intentionally minimal: no reranking, no query transformation, no conversation memory. If you want to see how the same RAG looks in production, check the sibling project **[bboy-neuro-coach](https://github.com/)** — it adds HyDE, LLM-as-reranker, LongContextReorder, dual backend (OpenAI + local FRED-T5), and offline tests.
 
-**Origin:** originally developed as part of the "neuro-employee" course on Google Colab; refactored for Python 3.12 + VS Code in 2026.
+**Origin:** originally written on **16.03.2026** as a Colab notebook during the "neuro-employee" course; later adapted for Python 3.12 + VS Code (migrated imports to LangChain 0.3, replaced deprecated `gpt-3.5-turbo` with `gpt-4o-mini`, moved secrets to `.env`, fixed the `\n` bug in the retrieved-chunks join, added error handling around ingestion).
 
 ## Example Result
 
