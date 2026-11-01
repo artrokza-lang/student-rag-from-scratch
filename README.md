@@ -16,9 +16,19 @@ An educational RAG (Retrieval-Augmented Generation) project that shows how a nai
 
 ## Example Result
 
-[`doc/work.mp4`](doc/work.mp4) — full demo: selecting a neuro-employee, training on a Google Doc, and sending a query.
+**1. Selecting a neuro-employee — the prompt, sample query, and document link are auto-filled**
 
-> Video shows: employee selection → prompt auto-fill → "Обучить модель" → "Запрос к модели" → answer + token statistics in the log panel.
+<a href="doc/1.jpg" target="_blank"><img src="doc/1.jpg" alt="Employee selection" width="150"></a>
+
+**2. Training the model — the Google Doc is fetched, chunked, embedded, and stored in ChromaDB**
+
+<a href="doc/2.jpg" target="_blank"><img src="doc/2.jpg" alt="Training" width="150"></a>
+
+**3. Sending a query — retrieved chunks, token statistics, and the LLM answer**
+
+<a href="doc/3.jpg" target="_blank"><img src="doc/3.jpg" alt="Query result" width="150"></a>
+
+▶️ **Full demo video:** [`doc/work.mp4`](doc/work.mp4) — selection → training → query → answer, end to end.
 
 ## About the Project
 
@@ -234,6 +244,16 @@ Add `chroma_db/` to `.gitignore`.
 
 The "Запрос к модели" button was clicked before "Обучить модель". `answer_index()` guards on `self.search_index is None` and returns an empty string, logging the message. Click **Обучить модель** first.
 
+### 8. Images or the video return 404 on GitHub
+
+The path in the README must match the actual location of the files in the repo. Check what git sees:
+
+```bash
+git ls-files | grep -iE "\.(jpg|jpeg|png|mp4)$"
+```
+
+If the output is `doc/1.jpg`, `doc/2.jpg`, `doc/3.jpg`, `doc/work.mp4` — the paths in this README are correct. If files are in the repo root (no `doc/` prefix), either move them with `git mv 1.jpg doc/1.jpg` or drop the prefix in every image/video link. GitHub is case-sensitive: `1.JPG` and `1.jpg` are two different files.
+
 ## Roadmap
 
 **Stage 1 — UI + session persistence**
@@ -269,6 +289,9 @@ rag-from-scratch/
 ├── .gitignore
 ├── README.md
 └── doc/
+    ├── 1.jpg           # Screenshot: employee selection
+    ├── 2.jpg           # Screenshot: training
+    ├── 3.jpg           # Screenshot: query result
     └── work.mp4        # Demo video: selection → training → query → answer
 ```
 
